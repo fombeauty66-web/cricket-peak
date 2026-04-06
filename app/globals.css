@@ -1,0 +1,26 @@
+@import "tailwindcss";
+
+@theme {
+  --color-darkBlue: #001e3c;
+  --color-brandYellow: #facc15;
+}
+
+body {
+  background: #f8fafc;
+  color: #001e3c;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+}
+
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+@keyframes glow {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.9; transform: scale(0.99); }
+}
+.animate-glow { animation: glow 2s ease-in-out infinite; }
