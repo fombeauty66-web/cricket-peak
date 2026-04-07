@@ -1,15 +1,17 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  // 关键：允许在有 ESLint 错误的情况下完成构建
+import type { NextConfig } from "next";
+
+const nextConfig: NextConfig = {
+  /* 核心修复：跳过部署时的严格检查 */
   eslint: {
+    // 允许在有 ESLint 错误的情况下完成构建
     ignoreDuringBuilds: true,
   },
-  // 关键：允许在有 TypeScript 错误的情况下完成构建
   typescript: {
+    // 允许在有 TypeScript 错误的情况下完成构建
     ignoreBuildErrors: true,
   },
-  // 如果你的代码中有未使用的图片或资源，可以加上这个
   images: {
+    // 如果你有外部图片或本地未优化图片，开启此项防止报错
     unoptimized: true,
   }
 };
